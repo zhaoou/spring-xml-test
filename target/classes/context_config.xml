@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="
+	   		http://www.springframework.org/schema/beans
+	   		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="cheese" class="beans.CondiImplementation">
+		<constructor-arg value="Cheese"/>
+	</bean>
+	
+	<bean id="ketchup" class="beans.CondiImplementation">
+		<constructor-arg value="Ketchup"/>
+	</bean>
+	
+	<bean id="salami" class="beans.CondiImplementation">
+		<property name="name"  value="Salami"/>
+	</bean>
+	
+	<bean id="ryeBread" class="beans.RyeBread">
+		<constructor-arg value="RyeBread"/>
+	</bean>
+	
+	<bean id="sandwich" class="beans.Sandwich">
+		<constructor-arg ref="cheese"/>
+		<constructor-arg ref="ketchup"/>
+		<property name="thirdCoudiment" ref="salami"/>
+		<constructor-arg ref="ryeBread"/>
+	</bean>
+	
+
+</beans>
+
+
